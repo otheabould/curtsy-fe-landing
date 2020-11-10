@@ -1,0 +1,161 @@
+@import './components/app/variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Raleway, sans-serif;
+  background-color: $background;
+  color: $black;
+}
+
+h1 {
+  margin: 33.5px 0px;
+  font-size: 50px;
+  line-height: 55px;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+h2 {
+  margin: 0px 0px 33.5px 0px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+h3 {
+  margin: 0px 0px 33.5px 0px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong,
+a {
+  &.gray {
+    color: $gray;
+  }
+  &.dark-gray {
+    color: $dark-gray;
+  }
+  &.black {
+    color: $black;
+  }
+  &.blue {
+    color: $blue;
+  }
+  &.white {
+    color: $white;
+  }
+}
+
+p {
+  margin: 0px 0px 33.5px 0px;
+  color: $dark-gray;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  align-self: flex-start;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: $dark-gray;
+  cursor: pointer;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .error-message {
+    font-size: 12px;
+    font-weight: 500;
+    color: $red;
+    margin: 0px 0px 15px 0px;
+  }
+}
+
+form .btn {
+  align-self: flex-end;
+}
+
+.btns {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.btn {
+  border: none;
+  border-radius: 25px 25px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 9px 15px;
+  color: $blue;
+  background-color: $white;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(63, 125, 196, 0.2);
+  }
+
+  &:hover {
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &.blue {
+    background-color: $blue;
+    color: $white;
+
+    &:hover {
+      background-color: $dark-blue;
+    }
+  }
+
+  &.clear {
+    background-color: transparent;
+
+    &:hover {
+      color: $blue;
+      opacity: 0.8;
+    }
+  }
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  display: none;
+}
