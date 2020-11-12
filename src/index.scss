@@ -13,18 +13,23 @@ body {
 
 h1 {
   margin: 33.5px 0px;
-  font-size: 50px;
-  line-height: 55px;
+  font-size: 65px;
+  line-height: 65px;
   font-weight: 700;
   align-self: flex-start;
+  text-align: center;
+  width: 100%;
 }
 
 h2 {
   margin: 0px 0px 33.5px 0px;
-  font-size: 32px;
+  font-size: 27.5px;
   line-height: 36px;
-  font-weight: 700;
+  font-weight: 300;
   align-self: flex-start;
+  text-align: center;
+  width: 100%;
+  color: $gray
 }
 
 h3 {
@@ -84,22 +89,6 @@ input {
   border-radius: 0;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  .error-message {
-    font-size: 12px;
-    font-weight: 500;
-    color: $red;
-    margin: 0px 0px 15px 0px;
-  }
-}
-
-form .btn {
-  align-self: flex-end;
-}
 
 .btns {
   display: flex;
@@ -118,7 +107,7 @@ form .btn {
   background-color: $white;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s, opacity 0.2s;
-
+  
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(63, 125, 196, 0.2);
