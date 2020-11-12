@@ -7,19 +7,19 @@ function TextInput({ name, value, onChange, placeholder = '', type = 'text', req
     const [showErr, setShowError] = useState(false);
 
     return (
-        <div class="input">
-            <div class="input-container">
+        <div className="input">
+            <div className="input-container">
                 <input
                     type="email"
-                    class="input-field"
+                    className="input-field"
                     placeholder="Enter your email address"
                     onChange={handleChange}
                 />
-                <div class="input-field-shadow"></div>
+                <div className="input-field-shadow"></div>
             </div>
-            <div class="submit-container" style={{ opacity: value ? 1 : 0 }}>
-                <input type="submit" class="submit-btn" />
-                <div class="submit-btn-shadow"></div>
+            <div className="submit-container" style={{ opacity: value ? 1 : 0 }}>
+                <input type="submit" className="submit-btn" />
+                <div className="submit-btn-shadow"></div>
             </div>
         </div>
     );

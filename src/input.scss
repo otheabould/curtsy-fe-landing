@@ -1,12 +1,9 @@
 @import './variables.scss';
 
-
-
 .input {
 	position: relative;
 	display: flex;
-	width: 600px;
-   margin: 0 10px;
+  width: 100%;
 
 	.input-container {
 		position: relative;
