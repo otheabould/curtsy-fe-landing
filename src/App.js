@@ -7,14 +7,17 @@ const { default: TextInput } = require('./TextInput');
 function App() {
     const [email, setEmail] = useState();
     return (
-        <div className="App">
+        <div className="app">
             <Header />
             <div className="content">
                 <h1>All-in-one booking system</h1>
-                <h2>One tool for your whole team. Book, plan, and get organized.</h2>
+                <h2 className="purple">
+                    One tool for your whole team. Book, plan, and get organized.
+                </h2>
                 <form>
                     <TextInput
                         placeholder="Enter your email..."
+                        alwaysShowButton
                         type="email"
                         value={email}
                         onChange={(_, val) => {
@@ -22,6 +25,9 @@ function App() {
                         }}
                     />
                 </form>
+                <h3 className="gray">
+                    It's going to be amazing! Sign up to find out when it's ready.
+                </h3>
             </div>
         </div>
     );

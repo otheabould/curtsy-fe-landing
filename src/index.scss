@@ -12,31 +12,27 @@ body {
 }
 
 h1 {
-  margin: 33.5px 0px;
-  font-size: 65px;
+  margin: 0 0 39px 0;
+  font-size: 70px;
   line-height: 65px;
   font-weight: 700;
-  align-self: flex-start;
-  text-align: center;
   width: 100%;
 }
 
 h2 {
-  margin: 0px 0px 33.5px 0px;
+  margin: 0px 0px 30px 0px;
   font-size: 27.5px;
   line-height: 36px;
-  font-weight: 300;
-  align-self: flex-start;
-  text-align: center;
+  font-weight: 500;
   width: 100%;
   color: $gray
 }
 
 h3 {
-  margin: 0px 0px 33.5px 0px;
+  margin: 0px 0px 22px 0px;
   font-size: 20px;
   line-height: 20px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h1,
@@ -54,6 +50,9 @@ a {
   &.dark-gray {
     color: $dark-gray;
   }
+  &.light-gray {
+    color: $light-gray;
+  }
   &.black {
     color: $black;
   }
@@ -63,10 +62,16 @@ a {
   &.white {
     color: $white;
   }
+  &.purple {
+    color: $purple;
+  }
+  &.light-purple {
+    color: $light-purple;
+  }
 }
 
 p {
-  margin: 0px 0px 33.5px 0px;
+  margin: 0px 0px 25px 0px;
   color: $dark-gray;
   font-size: 16px;
   font-weight: 500;

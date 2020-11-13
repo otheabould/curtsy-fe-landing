@@ -1,38 +1,51 @@
 @import './variables.scss';
 
 .content {
+  height: calc(100% - 50px);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  margin-top: 50px;
+  text-align: center;
+  
+  p {
     width: 100%;
-    padding: 80px 20px 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    z-index: -1;
   }
-
+}
 
 form {
-  max-width: 600px;
   padding: 5px;
+  margin: 0px 0px 22px 0px;
+  max-width: 523.375px;
   width: 100%;
   min-height: 100px;
   display: grid;
   align-items: center;
   gap: 10px;
-
-  .form-input {
-    width: 70%;
-  }
-  .error-message {
-    font-size: 12px;
-    font-weight: 500;
-    color: $red;
-    margin: 0px 0px 15px 0px;
-  }
 }
+
 
 @media (min-width: 500px) {
   .content {
-    padding: 100px 10% 50px 10%;
+    justify-content: flex-start;
+    padding-top: 15%;
+    
+    h2 {
+      order: 1
+    }
+    h1 {
+      order: 2
+    }
+    h3 {
+      order: 3
+    }
+    form {
+      order: 4
+    }
   }
 }
