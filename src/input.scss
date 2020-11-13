@@ -62,16 +62,29 @@
 			border: none;
 			border-radius: 2px;
 			background-color:$light-purple;
-			padding: 12px 20px;
+			padding: 0 12px;
 			color: $white;
 			text-transform: uppercase;
 			-webkit-appearance: none;
 			transition: all ease 240ms;
 			cursor: pointer;
-			
+			min-width: 95px;
+			min-height: 40px;
+
 			&:hover {
 				background-color: $purple;
 			}
+
+			&:focus {
+				outline: none;
+				box-shadow: 0 0 0 3px rgba(63, 125, 196, 0.2);
+				background-color: $purple;
+			  }
+			
+			  &:active {
+				outline: none;
+				box-shadow: none;
+			  }
 		}
 
 		.submit-btn-shadow {

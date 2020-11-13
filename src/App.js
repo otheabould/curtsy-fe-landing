@@ -1,11 +1,31 @@
 import { useState } from 'react';
 import './app.scss';
+import { API_URL } from './config';
 
-const { default: Header } = require('./Header');
-const { default: TextInput } = require('./TextInput');
+import Header from './Header';
+import TextInput from './TextInput';
 
 function App() {
     const [email, setEmail] = useState();
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [posting, setPosting] = useState(false);
+
+    if (showSuccess)
+        return (
+            <div className="app">
+                <Header />
+                <div className="content">
+                    <h1>All-in-one booking system</h1>
+                    <h2 className="purple">
+                        One tool for your whole team. Book, plan, and get organized.
+                    </h2>
+                    <h3 className="gray">
+                        Thanks! We'll be in touch. <span class="emojis">🥳🤘👯‍♀️</span>
+                    </h3>
+                </div>
+            </div>
+        );
+
     return (
         <div className="app">
             <Header />
@@ -14,12 +34,13 @@ function App() {
                 <h2 className="purple">
                     One tool for your whole team. Book, plan, and get organized.
                 </h2>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <TextInput
                         placeholder="Enter your email..."
                         alwaysShowButton
                         type="email"
                         value={email}
+                        loading={posting}
                         onChange={(_, val) => {
                             setEmail(val);
                         }}
@@ -31,6 +52,32 @@ function App() {
             </div>
         </div>
     );
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        if (!validateEmail(email)) return;
+
+        try {
+            setPosting(true);
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            };
+            const response = await fetch(`${API_URL}/email`, requestOptions);
+            await response.json();
+
+            setShowSuccess(true);
+        } catch (e) {
+            console.log({ e });
+        }
+    }
+}
+
+function validateEmail(email) {
+    const emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    return emailRegex.test(email);
 }
 
 export default App;

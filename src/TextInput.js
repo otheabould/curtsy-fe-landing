@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './input.scss';
+import LoadingIcon from './LoadingIcon';
 
 function TextInput({
     name,
@@ -9,6 +10,7 @@ function TextInput({
     placeholder = '',
     type = 'text',
     buttonText = 'submit',
+    loading = false,
 }) {
     const buttonStyles = value ? { opacity: 1 } : { opacity: 0, pointerEvents: 'none' };
     return (
@@ -24,7 +26,7 @@ function TextInput({
             </div>
             <div className="submit-container" style={buttonStyles}>
                 <button type="submit" className="submit-btn">
-                    {buttonText}
+                    {loading ? <LoadingIcon /> : buttonText}
                 </button>
                 <div className="submit-btn-shadow"></div>
             </div>
