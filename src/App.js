@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import './app.scss';
-import { API_URL } from './config';
+import ReactGA from 'react-ga';
 
+import './app.scss';
+
+import { API_URL } from './config';
 import Header from './Header';
 import TextInput from './TextInput';
 
@@ -69,6 +71,12 @@ function App() {
             await response.json();
 
             setShowSuccess(true);
+
+            ReactGA.event({
+                category: 'Emails',
+                action: 'Sign up to waiting list',
+                value: email,
+            });
         } catch {
             setPosting(false);
         }
