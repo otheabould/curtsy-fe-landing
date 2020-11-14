@@ -42,7 +42,7 @@ function App() {
                     All-in-one booking <span>system</span>
                 </h1>
                 <h2 className="purple">
-                    One tool for your whole team. <span>Book, plan, get organised.</span>
+                    For individuals and teams. <span>Book, plan, get organised.</span>
                 </h2>
                 <form onSubmit={handleSubmit}>
                     <TextInput
