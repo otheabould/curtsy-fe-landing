@@ -69,8 +69,8 @@ function App() {
             await response.json();
 
             setShowSuccess(true);
-        } catch (e) {
-            console.log({ e });
+        } catch {
+            setPosting(false);
         }
     }
 }
