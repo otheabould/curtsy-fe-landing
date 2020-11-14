@@ -13,8 +13,8 @@ deploy:
   secret_access_key: ${AWS_SECRET_KEY}
   on:
     all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^(staging|master)$
+    condition: $TRAVIS_BRANCH =~ ^(staging|main)$
 branches:
   only:
-    - master
+    - main
     # - staging
