@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 
 import './app.scss';
@@ -11,6 +11,12 @@ function App() {
     const [email, setEmail] = useState();
     const [showSuccess, setShowSuccess] = useState(false);
     const [posting, setPosting] = useState(false);
+
+    useEffect(() => {
+        ReactGA.initialize('UA-183039011-1');
+
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     if (showSuccess)
         return (
