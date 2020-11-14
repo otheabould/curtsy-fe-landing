@@ -8,7 +8,7 @@ import './index.scss';
 
 console.log({ NODE_ENV: process.env.NODE_ENV });
 if (process.env.NODE_ENV === 'production') {
-    ReactGA.initialize('G-CKR0XXQ90W');
+    ReactGA.initialize('UA-183039011-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
