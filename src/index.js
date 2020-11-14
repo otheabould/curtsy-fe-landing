@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import './index.scss';
 
+console.log({ NODE_ENV: process.env.NODE_ENV });
 if (process.env.NODE_ENV === 'production') {
     ReactGA.initialize('G-CKR0XXQ90W');
     ReactGA.pageview(window.location.pathname + window.location.search);

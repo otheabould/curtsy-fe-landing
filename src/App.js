@@ -72,11 +72,13 @@ function App() {
 
             setShowSuccess(true);
 
-            ReactGA.event({
-                category: 'Emails',
-                action: 'Sign up to waiting list',
-                value: email,
-            });
+            if (process.env.NODE_ENV === 'production') {
+                ReactGA.event({
+                    category: 'Emails',
+                    action: 'Sign up to waiting list',
+                    value: email,
+                });
+            }
         } catch {
             setPosting(false);
         }
