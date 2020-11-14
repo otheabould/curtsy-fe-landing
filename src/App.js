@@ -38,9 +38,11 @@ function App() {
         <div className="app">
             <Header />
             <div className="content">
-                <h1>All-in-one booking system</h1>
+                <h1>
+                    All-in-one booking <span>system</span>
+                </h1>
                 <h2 className="purple">
-                    One tool for your whole team. Book, plan, and get organized.
+                    One tool for your whole team. <span>Book, plan, get organised.</span>
                 </h2>
                 <form onSubmit={handleSubmit}>
                     <TextInput
