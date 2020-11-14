@@ -31,7 +31,7 @@
 
 form {
   padding: 5px;
-  margin: 0px 0px 22px 0px;
+  margin: 0 0 0.7em 0;
   max-width: 523.375px;
   width: 100%;
   min-height: 100px;
@@ -41,7 +41,7 @@ form {
 }
 
 
-@media (min-width: 500px) {
+@media (min-width: 1000px) {
   .content {
     justify-content: flex-start;
     padding-top: 15%;
