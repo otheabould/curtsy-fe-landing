@@ -40,11 +40,27 @@ form {
   gap: 10px;
 }
 
-
-@media (min-width: 1000px) {
+@media (min-width: 500px) {
   .content {
-    justify-content: flex-start;
-    padding-top: 15%;
+    
+    h2 {
+      margin: 0 0 0.1em 0;
+    }
+    h1 {
+      font-size: 3.3em;
+      margin: 0 0 0.3em 0;
+    }
+    h3 {
+      margin: 0;
+    }
+    form {
+      margin: 0 0 0.2em 0;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .content {
     
     h1, h2 {
       span {
