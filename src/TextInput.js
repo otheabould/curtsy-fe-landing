@@ -24,12 +24,9 @@ function TextInput({
                 />
                 <div className="input-field-shadow"></div>
             </div>
-            <div className="submit-container" style={buttonStyles}>
-                <button type="submit" className="submit-btn">
-                    {loading ? <LoadingIcon /> : buttonText}
-                </button>
-                <div className="submit-btn-shadow"></div>
-            </div>
+            <button type="submit" className="submit-btn" style={buttonStyles}>
+                {loading ? <LoadingIcon /> : buttonText}
+            </button>
         </div>
     );
 

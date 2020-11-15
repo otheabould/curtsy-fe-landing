@@ -50,53 +50,39 @@
          	transition: all ease 240ms;
 		}
 	}
-
-	.submit-container {
-		position: absolute;
-		z-index: 0;
-		right: -10px;
-		top: calc(25% - 5px);
-		transition: all ease 240ms;
 		
-		.submit-btn {
-			border: none;
-			border-radius: 2px;
-			background-color:$light-purple;
-			padding: 0 12px;
-			color: $white;
-			text-transform: uppercase;
-			-webkit-appearance: none;
-			transition: all ease 240ms;
-			cursor: pointer;
-			min-width: 95px;
-			min-height: 40px;
+	.submit-btn {
+		position: absolute;
+		right: -10px;
+		top: 7.5px;
+		transition: all ease 240ms;
+		border: none;
+		border-radius: 2px;
 
-			&:hover {
-				background-color: $purple;
+		background-color:$light-purple;
+		color: $white;
+		text-transform: uppercase;
+		-webkit-appearance: none;
+		transition: all ease 240ms;
+		cursor: pointer;
+
+		min-width: 95px;
+		height: 40px;
+		box-shadow: 0px 2px 10px  #d8ddec;
+
+		&:hover {
+			background-color: $purple;
+		}
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 3px rgba(63, 125, 196, 0.2);
+			background-color: $purple;
 			}
-
-			&:focus {
-				outline: none;
-				box-shadow: 0 0 0 3px rgba(63, 125, 196, 0.2);
-				background-color: $purple;
-			  }
-			
-			  &:active {
-				outline: none;
-				box-shadow: none;
-			  }
-		}
-
-		.submit-btn-shadow {
-			position: absolute;
-			display: flex;
-			width: 90%;
-			height: 50%;
-			bottom: 0;
-			left: 5%;
-			z-index: -5;
-			box-shadow: 0px 2px 10px  #d8ddec;
-			border-radius: 2px;
-		}
+		
+			&:active {
+			outline: none;
+			box-shadow: none;
+			}
 	}
 }
