@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <ns1:stopCardV3Response soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://wschopinapi.chopin.prepaytec.com">
+            <stopCardV3Return href="#id0" />
+        </ns1:stopCardV3Response>
+        <multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns2:StopCardResult" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="http://response.wschopinapi.chopin.prepaytec.com">
+            <chopinRef xsi:type="xsd:string" xsi:nil="true" />
+            <errorDetail xsi:type="xsd:string">Card found using following serial number is blocked  1030003445</errorDetail>
+            <message xsi:type="xsd:string">CARD/ACCOUNT BLOCKED</message>
+            <resultCode xsi:type="xsd:string">CWS0087</resultCode>
+        </multiRef>
+    </soapenv:Body>
+</soapenv:Envelope>
