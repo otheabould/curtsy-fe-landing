@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import './app.scss';
 
@@ -13,6 +13,7 @@ function App() {
     const [posting, setPosting] = useState(false);
 
     const [sendEvent] = useGoogleAnalytics();
+    const formRef = useRef();
 
     return (
         <div className="app">
@@ -24,23 +25,26 @@ function App() {
                 <h2 className="purple">
                     For individuals and teams. <span>Book, plan, get organised.</span>
                 </h2>
+
                 {!showSuccess && (
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} ref={formRef}>
                         <TextInput
                             placeholder="Enter your email..."
                             alwaysShowButton
                             type="email"
                             value={email}
                             loading={posting}
+                            disabled={showSuccess}
                             onChange={(_, val) => {
                                 setEmail(val);
                             }}
                         />
                     </form>
                 )}
+
                 {showSuccess ? (
-                    <h3 className="gray">
-                        Thanks! We'll be in touch. <span class="emojis">🥳🤘👯‍♀️</span>
+                    <h3 className="gray success-message">
+                        Thanks! We'll be in touch. <span className="emojis">🥳🤘👯‍♀️</span>
                     </h3>
                 ) : (
                     <h3 className="gray">
@@ -73,9 +77,8 @@ function App() {
                 action: 'Sign up to waiting list',
                 value: email,
             });
-        } catch {
-            setPosting(false);
-        }
+        } catch {}
+        setPosting(false);
     }
 }
 

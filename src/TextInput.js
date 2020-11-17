@@ -11,12 +11,14 @@ function TextInput({
     type = 'text',
     buttonText = 'submit',
     loading = false,
+    disabled = false,
 }) {
     const buttonStyles = value ? { opacity: 1 } : { opacity: 0, pointerEvents: 'none' };
     return (
         <div className="input">
             <div className="input-container">
                 <input
+                    disabled={disabled}
                     type={type}
                     className="input-field"
                     placeholder={placeholder}
