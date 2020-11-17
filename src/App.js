@@ -1,64 +1,52 @@
-import { useEffect, useState } from 'react';
-import ReactGA from 'react-ga';
+import { useState } from 'react';
 
 import './app.scss';
 
 import { API_URL } from './config';
 import Header from './Header';
 import TextInput from './TextInput';
+import useGoogleAnalytics from './useGoogleAnalytics';
 
 function App() {
     const [email, setEmail] = useState();
     const [showSuccess, setShowSuccess] = useState(false);
     const [posting, setPosting] = useState(false);
 
-    useEffect(() => {
-        ReactGA.initialize('UA-183039011-1');
-
-        ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
-
-    if (showSuccess)
-        return (
-            <div className="app">
-                <Header />
-                <div className="content">
-                    <h1>All-in-one booking system</h1>
-                    <h2 className="purple">
-                        One tool for your whole team. Book, plan, and get organized.
-                    </h2>
-                    <h3 className="gray">
-                        Thanks! We'll be in touch. <span class="emojis">🥳🤘👯‍♀️</span>
-                    </h3>
-                </div>
-            </div>
-        );
+    const [sendEvent] = useGoogleAnalytics();
 
     return (
         <div className="app">
             <Header />
             <div className="content">
                 <h1>
-                    All-in-one booking <span>system</span>
+                    Appointment booking <span>system</span>
                 </h1>
                 <h2 className="purple">
                     For individuals and teams. <span>Book, plan, get organised.</span>
                 </h2>
-                <form onSubmit={handleSubmit}>
-                    <TextInput
-                        placeholder="Enter your email..."
-                        alwaysShowButton
-                        type="email"
-                        value={email}
-                        loading={posting}
-                        onChange={(_, val) => {
-                            setEmail(val);
-                        }}
-                    />
-                </form>
-                <h3 className="gray">
-                    It's going to be amazing! Sign up to find out when it's ready.
-                </h3>
+                {!showSuccess && (
+                    <form onSubmit={handleSubmit}>
+                        <TextInput
+                            placeholder="Enter your email..."
+                            alwaysShowButton
+                            type="email"
+                            value={email}
+                            loading={posting}
+                            onChange={(_, val) => {
+                                setEmail(val);
+                            }}
+                        />
+                    </form>
+                )}
+                {showSuccess ? (
+                    <h3 className="gray">
+                        Thanks! We'll be in touch. <span class="emojis">🥳🤘👯‍♀️</span>
+                    </h3>
+                ) : (
+                    <h3 className="gray">
+                        It's going to be amazing! Sign up to find out when it's ready.
+                    </h3>
+                )}
             </div>
         </div>
     );
@@ -80,13 +68,11 @@ function App() {
 
             setShowSuccess(true);
 
-            if (process.env.NODE_ENV === 'production') {
-                ReactGA.event({
-                    category: 'Emails',
-                    action: 'Sign up to waiting list',
-                    value: email,
-                });
-            }
+            sendEvent({
+                category: 'Emails',
+                action: 'Sign up to waiting list',
+                value: email,
+            });
         } catch {
             setPosting(false);
         }
