@@ -19,7 +19,7 @@ function App() {
             <Header />
             <div className="content">
                 <h1>
-                    Appointment booking <span>system</span>
+                    All-in-one booking <span>system</span>
                 </h1>
                 <h2 className="purple">
                     For individuals and teams. <span>Book, plan, get organised.</span>
